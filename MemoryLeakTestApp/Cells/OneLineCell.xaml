@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoryLeakTestApp.Cells.OneLineCell"
+             xmlns:cells="clr-namespace:MemoryLeakTestApp.Cells"
+             xmlns:badges="clr-namespace:MemoryLeakTestApp.Badges"
+             xmlns:views="clr-namespace:MemoryLeakTestApp.Views"
+             x:DataType="cells:OneLineCell"
+             BackgroundColor="{DynamicResource Background}"
+             ColumnSpacing="0"
+             RowSpacing="0"
+             RowDefinitions="65, 1"
+             ColumnDefinitions="Auto, *, Auto, Auto, Auto"
+             x:Name="This">
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer x:Name="TapGestureRecognizer"
+                              Tapped="TapGestureRecognizer_OnTapped" />
+    </Grid.GestureRecognizers>
+
+    <Frame x:Name="LeadingImageFrame"
+           BackgroundColor="Transparent"
+           HasShadow="False"
+           CornerRadius="0"
+           Padding="0"
+           Grid.Row="0"
+           Grid.Column="0"
+           Grid.RowSpan="2"
+           Margin="16,0,0,0"
+           VerticalOptions="Center">
+        <Image x:Name="LeadingImageView"
+               WidthRequest="24"
+               HeightRequest="24"
+               BackgroundColor="Transparent" />
+    </Frame>
+
+    <!-- single line label -->
+    <Grid x:Name="TextLabelWrapper"
+        Grid.Row="0"
+        Grid.Column="1"
+        Margin="16,0,16,0"
+        HeightRequest="24">
+        <Label x:Name="TextLabel"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               MaxLines="1"
+               HeightRequest="24"
+               LineBreakMode="TailTruncation"
+               Style="{StaticResource BigDefaultRegularLeftStyle}"
+               AutomationProperties.ExcludedWithChildren="True">
+            <Label.Triggers>
+                <Trigger TargetType="Label"
+                         Property="IsEnabled"
+                         Value="True">
+                    <Setter Property="TextColor"
+                            Value="{StaticResource Default}" />
+                </Trigger>
+                <Trigger TargetType="Label"
+                         Property="IsEnabled"
+                         Value="False">
+                    <Setter Property="TextColor"
+                            Value="{StaticResource FontSecondary}" />
+                </Trigger>
+            </Label.Triggers>
+        </Label>
+    </Grid>
+
+    <badges:Tag x:Name="Tag"
+                Grid.Row="0"
+                Grid.Column="2"
+                VerticalOptions="Center"
+                Margin="0, 0, 16, 0"
+                Padding="6.5, 2"/>
+
+    <views:Badge x:Name="Badge"
+                 Grid.Row="0"
+                 Grid.Column="3"
+                 Grid.RowSpan="2"
+                 Margin="0,0,6,0" />
+
+    <Frame x:Name="TrailingSemanticFrame"
+          Grid.Row="0"
+          Grid.Column="4"
+          Grid.RowSpan="2"
+          HasShadow="False"
+          CornerRadius="0"
+          Padding="0"
+          Margin="16,0,16,0"
+          VerticalOptions="Center"
+          BackgroundColor="Transparent">
+        <Image x:Name="TrailingImageView"
+               AutomationProperties.ExcludedWithChildren="True"
+               WidthRequest="24"
+               HeightRequest="24"
+               BackgroundColor="Transparent"/>
+    </Frame>
+
+    <!-- Do not add event handlers for 'Toggled' here. See code behind -->
+    <Switch x:Name="Switch"
+            Grid.Row="0"
+            Grid.Column="4"
+            Grid.RowSpan="2"
+            Margin="0,0,16,0"
+            VerticalOptions="Center" />
+
+    <views:Divider x:Name="Divider"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="5" />
+</Grid>

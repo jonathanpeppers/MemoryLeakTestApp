@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="MemoryLeakTestApp.Badges.Tag"
+        Padding="8,2,8,4"
+        BackgroundColor="{DynamicResource DividerDefault}">
+        <Border.StrokeShape>
+                <RoundRectangle CornerRadius="4"/>
+        </Border.StrokeShape>
+    
+        <Label x:Name="TagTextLabel"
+               BackgroundColor="Transparent"
+               Style="{StaticResource TinyDefaultMediumCenterStyle}"/>
+</Border>

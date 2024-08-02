@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoryLeakTestApp.Views.Badge">
+    <ContentView.Content>
+        <Grid IsClippedToBounds="True"
+              RowDefinitions="*"
+              ColumnDefinitions="*">
+            <Ellipse x:Name="Ellipse"
+                     Grid.Row="0"
+                     Fill="{StaticResource DefaultBrush}"
+                     WidthRequest="24"
+                     HeightRequest="24"
+                     Aspect="Uniform"/>
+            <Label x:Name="CounterLabel"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   BackgroundColor="Transparent"
+                   VerticalTextAlignment="Center"
+                   Style="{DynamicResource TinyDarkRegularCenterStyle}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

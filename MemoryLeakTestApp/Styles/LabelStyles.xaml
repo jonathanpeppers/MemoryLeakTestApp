@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="MemoryLeakTestApp.Styles.LabelStyles">
+    
+    <Color x:Key="Active">#FFF59B00</Color>
+    <Color x:Key="Active500">#FF623E00</Color>
+    <Color x:Key="ActiveDisabled">#FF7C6229</Color>
+    <Color x:Key="ActiveLight">#FEDFB8</Color>
+    <Color x:Key="Background">#FF1F1F1F</Color>
+    <Color x:Key="BackgroundCards">#FF292B2F</Color>
+    <Color x:Key="BackgroundLightGray">#3C3E42</Color>
+    <Color x:Key="BackgroundGray">#2C2D2E</Color>
+    <Color x:Key="BackgroundSecondary">#FF2C2F30</Color>
+    <Color x:Key="BackgroundTertiary">#FF3A3E40</Color>
+    <Color x:Key="Black_10">#3C3E42</Color>
+    <Color x:Key="Black_20">#33000000</Color>
+    <Color x:Key="Black_40">#66000000</Color>
+    <Color x:Key="Black_60">#99000000</Color>
+    <Color x:Key="Black_80">#CC000000</Color>
+    <Color x:Key="ButtonDisabled">#FF4B4B4B</Color>
+    <Color x:Key="ButtonDisabledLighter">#4D5055</Color>
+    <Color x:Key="ButtonPressed">#FFB97B10</Color>
+    <Color x:Key="CoolGrayLight">#A0A3AB</Color>
+    <Color x:Key="CoolGray">#4D5055</Color>
+    <Color x:Key="CoolGray40">#C4C6CB</Color>
+    <Color x:Key="CoolGray90">#3C3E42</Color>
+    <Color x:Key="Default">#FFFFFFFF</Color>
+    <Color x:Key="DividerBars">#FF303236</Color>
+    <Color x:Key="DividerDefault">#FF666666</Color>
+    <Color x:Key="DividerDarker">#42464A</Color>
+    <Color x:Key="FontDark">#FF1F2329</Color>
+    <Color x:Key="FontDarkLight">#4D5055</Color>
+    <Color x:Key="FontDarkLighter">#80858F</Color>
+    <Color x:Key="FontSecondary">#FFA1A1A1</Color>
+    <Color x:Key="HighlightGreen">#00C087</Color>
+    <Color x:Key="HighlightRed">#FE1C44</Color>
+    <Color x:Key="Inactive">#FF969899</Color>
+    <Color x:Key="Positive">#FF50E3C2</Color>
+    <Color x:Key="TagGreen">#008A73</Color>
+    <Color x:Key="Warning">#FFF63F5D</Color>
+    <Color x:Key="White_20">#33FFFFFF</Color>
+    <Color x:Key="White_40">#66FFFFFF</Color>
+    <Color x:Key="White_60">#99FFFFFF</Color>
+    <Color x:Key="White_80">#CCFFFFFF</Color>
+    <Color x:Key="White_100">#FFFFFFFF</Color>
+
+    <Style x:Key="TinyDefaultMediumCenterStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="TextColor" Value="#FFFFFFFF" />
+        <Setter Property="FontFamily" Value="{DynamicResource  MediumFontStyle}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+    
+    <OnPlatform x:Key="MediumFontStyle"
+                x:TypeArguments="x:String">
+        <On Platform="iOS">.SFUIText-Medium</On>
+        <On Platform="Android">sans-serif-medium</On>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="RegularFontStyle"
+                x:TypeArguments="x:String">
+        <On Platform="iOS">.SFUIText</On>
+        <On Platform="Android">sans-serif</On>
+    </OnPlatform>
+    
+    <Style x:Key="BigDefaultRegularLeftStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="{DynamicResource  18}" />
+        <Setter Property="TextColor" Value="{DynamicResource  Default}" />
+        <Setter Property="FontFamily" Value="{DynamicResource  RegularFontStyle}" />
+    </Style>
+    
+    <SolidColorBrush x:Key="DefaultBrush" Color="#FFFFFFFF" />
+</ResourceDictionary>
