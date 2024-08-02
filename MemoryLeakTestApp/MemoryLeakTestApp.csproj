@@ -35,9 +35,8 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <CodesignProvision>match InHouse de.miele.Mieleatmobile.ALPHA</CodesignProvision>
-        <CodesignKey>iPhone Distribution: Miele &amp; Cie.KG</CodesignKey>
-        <ApplicationId>de.miele.Mieleatmobile.ALPHA</ApplicationId>
+       <!-- put your code signing identity here -->
+       <!-- /////-->
     </PropertyGroup>
 
     <ItemGroup>

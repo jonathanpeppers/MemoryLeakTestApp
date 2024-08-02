@@ -302,7 +302,14 @@ public partial class OneLineCell
 
     public OneLineCell()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
 
         TextLabel.Text = Text;
         Tag.TagText = TagText;

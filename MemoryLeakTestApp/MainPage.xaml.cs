@@ -2,15 +2,29 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
 
     public MainPage()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     private async void OnCounterClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(OneLineCellPage));
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(OneLineCellPage));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+        
     }
 }
