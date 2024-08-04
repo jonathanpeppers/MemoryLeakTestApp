@@ -1,14 +1,19 @@
-﻿using MemoryLeakTestApp.Styles;
-
+﻿
 namespace MemoryLeakTestApp;
 
 public partial class App : Application
 {
     public App()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
 
         MainPage = new AppShell();
-        // Resources.MergedDictionaries.Add(new MemoryLeakTestApp.Styles.LabelStyles());
     }
 }

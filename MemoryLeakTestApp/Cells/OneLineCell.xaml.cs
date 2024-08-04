@@ -1,6 +1,5 @@
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Maui.Skeleton;
 
 namespace MemoryLeakTestApp.Cells;
 
@@ -157,8 +156,6 @@ public partial class OneLineCell
                                                         defaultValue: false,
                                                         onPropertyChanged: (cell, _, newValue) =>
                                                         {
-                                                            Skeleton.SetIsBusy(cell.LeadingImageFrame, newValue ?? false);
-                                                            Skeleton.SetIsBusy(cell.TextLabelWrapper, newValue ?? false);
 
                                                             SetImageViewsVisibility(cell, cell.CellType, newValue ?? false);
                                                             SetTrailingControlsVisibility(cell, newValue ?? false);
@@ -329,32 +326,6 @@ public partial class OneLineCell
         Badge.IsVisible = BadgeCount > 0 && !IsBusy;
 
         UpdateBadgeSpacing();
-
-        // E.g. in ApplianceSettings using the toggle leads to an restructuring in the UI in
-        // some cases that is triggered by this event handler. Before (when adding the event
-        // handler for Switch.Toggled synchronously (xaml or constructor) it looked like this:
-        //   Switch.Toggle => [Switch_OnToggled, FRendererEventHandler]
-        //   When using the toggle:
-        //     - Switch_OnToggled is called and triggers an UI restructuring
-        //     - Old renderer gets disposed
-        //     - New renderer is created
-        //     - RendererEventHandler is called on a disposed renderer
-        //       -> NullReferenceException and app crash
-        // We need to make sure that the local event handler is registered after the renderers
-        // event handler, so that it looks like this:
-        //   Switch.Toggle => [RendererEventHandler, Switch_OnToggled]
-        //   When using the toggle:
-        //     - RendererEventHandler is called without any issues
-        //     - Switch_OnToggled is called and triggers an UI restructuring
-        //     - Old renderer gets disposed
-        //     - New renderer is created
-        //       -> Everything is fine
-        // Dispatcher.Dispatch(() =>
-        // {
-        //     Switch.Toggled += Switch_OnToggled;
-        //
-        //     _wasToggleEventSet = true;
-        // });
     }
 
     #endregion

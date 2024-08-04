@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
         <Grid RowDefinitions="*,Auto, 66, Auto, *">
-            <Button Text="Close"
+            <Button Text="Navigate back"
                     Grid.Row="1"
                     Margin="8"
                     Clicked="OnCounterClicked"/>

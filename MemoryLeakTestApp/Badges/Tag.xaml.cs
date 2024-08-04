@@ -24,7 +24,14 @@ public partial class Tag
 
     public Tag()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     #endregion

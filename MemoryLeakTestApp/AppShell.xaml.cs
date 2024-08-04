@@ -4,7 +4,14 @@ public partial class AppShell : Shell
 {
     public AppShell()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
         
         Routing.RegisterRoute(nameof(OneLineCellPage.OneLineCellPage), typeof(OneLineCellPage.OneLineCellPage));
     }
