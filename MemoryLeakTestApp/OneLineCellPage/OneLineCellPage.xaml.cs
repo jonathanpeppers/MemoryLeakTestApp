@@ -7,6 +7,7 @@ public partial class OneLineCellPage : ContentPage
         try
         {
             InitializeComponent();
+            GC.Collect();
         }
         catch (Exception exception)
         {
@@ -18,6 +19,7 @@ public partial class OneLineCellPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync("..");
+            GC.Collect();
         }
         catch (Exception exception)
         {
