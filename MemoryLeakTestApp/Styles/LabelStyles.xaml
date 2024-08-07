@@ -66,8 +66,8 @@
     </OnPlatform>
     
     <Style x:Key="BigDefaultRegularLeftStyle" TargetType="Label">
-        <Setter Property="FontSize" Value="{DynamicResource  18}" />
-        <Setter Property="TextColor" Value="{DynamicResource  Default}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource  Default}" />
         <Setter Property="FontFamily" Value="{DynamicResource  RegularFontStyle}" />
     </Style>
     

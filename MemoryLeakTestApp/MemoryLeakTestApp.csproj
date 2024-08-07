@@ -35,8 +35,13 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-       <!-- put your code signing identity here -->
-       <!-- /////-->
+        <!-- put your code signing identity here -->
+        <!-- /////-->
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <!-- put your code signing identity here -->
+        <!-- /////-->
     </PropertyGroup>
 
     <ItemGroup>

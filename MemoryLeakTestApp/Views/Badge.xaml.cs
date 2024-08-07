@@ -66,7 +66,14 @@ public partial class Badge
 
     public Badge()
     {
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
 
         CounterLabel.Text = GetCounterText(Counter);
     }

@@ -7,7 +7,7 @@
              xmlns:badges="clr-namespace:MemoryLeakTestApp.Badges"
              xmlns:views="clr-namespace:MemoryLeakTestApp.Views"
              x:DataType="cells:OneLineCell"
-             BackgroundColor="{DynamicResource Background}"
+             BackgroundColor="{StaticResource Background}"
              ColumnSpacing="0"
              RowSpacing="0"
              RowDefinitions="65, 1"

@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="MemoryLeakTestApp.Badges.Tag"
         Padding="8,2,8,4"
-        BackgroundColor="{DynamicResource DividerDefault}">
+        BackgroundColor="{StaticResource DividerDefault}">
         <Border.StrokeShape>
                 <RoundRectangle CornerRadius="4"/>
         </Border.StrokeShape>

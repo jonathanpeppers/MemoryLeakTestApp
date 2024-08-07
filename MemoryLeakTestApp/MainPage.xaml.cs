@@ -8,7 +8,6 @@ public partial class MainPage : ContentPage
         try
         {
             InitializeComponent();
-            GC.Collect();
         }
         catch (Exception e)
         {
@@ -21,7 +20,6 @@ public partial class MainPage : ContentPage
         try
         {
             await Shell.Current.GoToAsync(nameof(OneLineCellPage));
-            GC.Collect();
         }
         catch (Exception ex)
         {

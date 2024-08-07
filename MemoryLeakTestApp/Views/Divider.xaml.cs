@@ -10,6 +10,13 @@ public partial class Divider
             Stroke = dividerDefault;
         }
 
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }
