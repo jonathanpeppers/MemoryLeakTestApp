@@ -18,21 +18,18 @@
                               Tapped="TapGestureRecognizer_OnTapped" />
     </Grid.GestureRecognizers>
 
-    <Frame x:Name="LeadingImageFrame"
-           BackgroundColor="Transparent"
-           HasShadow="False"
-           CornerRadius="0"
-           Padding="0"
+    <Border x:Name="LeadingImageFrame"
+           Stroke="{StaticResource Background}"
            Grid.Row="0"
            Grid.Column="0"
            Grid.RowSpan="2"
-           Margin="16,0,0,0"
+           Padding="16,0,0,0"
            VerticalOptions="Center">
         <Image x:Name="LeadingImageView"
                WidthRequest="24"
                HeightRequest="24"
                BackgroundColor="Transparent" />
-    </Frame>
+    </Border>
 
     <!-- single line label -->
     <Grid x:Name="TextLabelWrapper"
@@ -78,22 +75,19 @@
                  Grid.RowSpan="2"
                  Margin="0,0,6,0" />
 
-    <Frame x:Name="TrailingSemanticFrame"
-          Grid.Row="0"
-          Grid.Column="4"
-          Grid.RowSpan="2"
-          HasShadow="False"
-          CornerRadius="0"
-          Padding="0"
-          Margin="16,0,16,0"
-          VerticalOptions="Center"
-          BackgroundColor="Transparent">
+    <Border x:Name="TrailingSemanticFrame"
+            Grid.Row="0"
+            Grid.Column="4"
+            Grid.RowSpan="2"
+            Padding="16,0,16,0"
+            VerticalOptions="Center"
+            Stroke="{StaticResource Background}">
         <Image x:Name="TrailingImageView"
                AutomationProperties.ExcludedWithChildren="True"
                WidthRequest="24"
                HeightRequest="24"
                BackgroundColor="Transparent"/>
-    </Frame>
+    </Border>
 
     <!-- Do not add event handlers for 'Toggled' here. See code behind -->
     <Switch x:Name="Switch"
